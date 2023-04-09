@@ -1,7 +1,7 @@
 #include <iostream>
 
 void insertion_sort(int arr[], int n) {
-  for(int i = 1; i < n; i++) {
+  for(int i = 1; i < n; ++i) {
       int j = i;
       while(j > 0 && arr[j-1] > arr[j]) {
         int tmp = arr[j];
@@ -13,7 +13,7 @@ void insertion_sort(int arr[], int n) {
 }
 
 void print_array(int arr[], int n){
-  for(int i = 0; i < n; i++){
+  for(int i = 0; i < n; ++i){
     std::cout << arr[i] << std::endl;
   }
 }
