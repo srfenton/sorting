@@ -7,28 +7,28 @@ void merge(int arr[], int l, int m, int r, int size){
     int temp[size];
     while(i <= m && j <= r){
         if(arr[i] <= arr[j]){
-            temp[k] = arr[i];    //left subarray value is smaller
+            temp[k] = arr[i];       //left subarray value is smaller
             ++i; 
             ++k;
         } else{
-            temp[k] = arr[j]; //right subarray value is smaller
+            temp[k] = arr[j];       //right subarray value is smaller
             ++j; 
             ++k; 
         }
     }
-    while(i <= m){
+    while(i <= m){                  // if one array is sorted, shift the remaining elements from the array to the temp array
         temp[k] = arr[i];
         ++i; 
         ++k;
 
     }
-    while(j <= r){
+    while(j <= r){                  // see above
         temp[k] = arr[j];
         ++j; 
         ++k;
 
     }
-    for(int x = l; x <= r; ++x){
+    for(int x = l; x <= r; ++x){        //copy temporary array to array
         arr[x] = temp[x];
     }
 }

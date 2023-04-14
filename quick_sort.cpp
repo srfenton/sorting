@@ -4,14 +4,14 @@ int partition(int arr[], int s, int e){
     int pivot = arr[e];
     int pindex = s;
     for(int i = s; i < e; ++i){
-        if(arr[i] < pivot){
+        if(arr[i] < pivot){             //move all elements less than the pivot to the left side of the array
             int tmp = arr[i];
             arr[i] = arr[pindex];
             arr[pindex] = tmp; 
             ++pindex;
             }
     }
-    int tmp = arr[e];
+    int tmp = arr[e];                   //move the pivot value right of the left sorted values
     arr[e] = arr[pindex];
     arr[pindex] = tmp;
     return pindex;
