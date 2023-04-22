@@ -13,7 +13,7 @@ void counting_sort(int arr[], int n) {
     ++count_arr[arr[i]];
   }
   
-  for(int i = 1; i < r+1; ++i){
+  for(int i = 1; i < r+1; ++i){                 //cumulative addition to determine the index number for each value in the array
     count_arr[i] = count_arr[i] + count_arr [i - 1] ;
   }
 
@@ -23,10 +23,6 @@ void counting_sort(int arr[], int n) {
   for(int i = 0; i < n; ++i){                 //transfer output array values to the input array
     arr[i] = output_arr[i];
   }
-
-  // for(int i = 0; i < r+1; ++i){
-  //   std::cout << "for the value of: "<< i << " we have a count of " << count_arr[i] << std::endl;
-  // }
 
 }
 
